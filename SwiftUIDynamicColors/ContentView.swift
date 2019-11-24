@@ -26,15 +26,17 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environment(\.colorScheme, .light)
     }
 }
     
     struct TextModifier: ViewModifier {
         func body(content: Content) -> some View {
             content
-                .foregroundColor(.green)
+                .padding(25)
+                .foregroundColor(Color("Text"))
                 .frame(height: 40)
-            .background(Color("DynamicColor"))
-                .padding(.bottom, 5)
+                .background(Color("DynamicColor"))
+                .padding(35)
         }
     }
