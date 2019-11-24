@@ -1,4 +1,4 @@
-//
+    //
 //  ContentView.swift
 //  SwiftUIDynamicColors
 //
@@ -10,7 +10,16 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, World!")
+        VStack {
+            Text("Hello, World")
+                .modifier(TextModifier())
+            
+            Text("I'm Here")
+                .modifier(TextModifier())
+            
+            Text("Let's Go!")
+                .modifier(TextModifier())
+        }
     }
 }
 
@@ -19,3 +28,13 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+    
+    struct TextModifier: ViewModifier {
+        func body(content: Content) -> some View {
+            content
+                .foregroundColor(.green)
+                .frame(height: 40)
+            .background(Color("DynamicColor"))
+                .padding(.bottom, 5)
+        }
+    }
